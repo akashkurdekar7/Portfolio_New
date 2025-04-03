@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import Button from '../Button/Button';
-import "./Navbar.css"
+import {useEffect, useState} from "react";
+import {motion} from "framer-motion";
+import Button from "../Button/Button";
+import "./Navbar.css";
 const sections = ["about", "projects", "contact"];
 
 const NavBar = () => {
@@ -21,13 +21,17 @@ const NavBar = () => {
         if (sectionElement) {
           const rect = sectionElement.getBoundingClientRect();
           if (rect.top <= 50 && rect.bottom > 50) {
-            newActiveTitles.push(section.charAt(0).toUpperCase() + section.slice(1));
+            newActiveTitles.push(
+              section.charAt(0).toUpperCase() + section.slice(1)
+            );
           }
         }
       });
 
       setActiveTitles((prev) =>
-        JSON.stringify(prev) !== JSON.stringify(newActiveTitles) ? newActiveTitles : prev
+        JSON.stringify(prev) !== JSON.stringify(newActiveTitles)
+          ? newActiveTitles
+          : prev
       );
     };
 
@@ -46,38 +50,27 @@ const NavBar = () => {
           backgroundColor: "#F5F5DC",
           color: "#000",
           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-        }}
-      >
+        }}>
         <motion.div
           className="d-flex justify-content-center gap-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}>
           {activeTitles.map((title, index) => (
             <Button key={index}>{title}</Button>
           ))}
         </motion.div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="position-absolute">
-        <div
-          className="position-fixed top-50"
-          style={{ transform: "rotate(270deg)", left: "-4%" }}
-        >
-          <h5 className="text-white text-uppercase">akashkurdekar39@gmail.com</h5>
+      <div className="postion-relative">
+        {/* Floating Elements */}
+        <div className="email">
+          <h5 className="text-white size16 text-uppercase">
+            akashkurdekar39@gmail.com
+          </h5>
         </div>
-
         {/* Progress Bar */}
-        <div
-          className="position-fixed top-50"
-          style={{
-            transform: "rotate(90deg)",
-            width: "10%",
-            right: "-1%",
-          }}
-        >
-          <div className="progress w-100 m-2" style={{ height: "4px" }}>
+        <div className="bar">
+          <div className="progress w-100 m-2" style={{height: "4px"}}>
             <div
               className="progress-bar text-red"
               role="progressbar"
@@ -90,8 +83,7 @@ const NavBar = () => {
               }}
               aria-valuenow={scrollProgress}
               aria-valuemin="0"
-              aria-valuemax="100"
-            ></div>
+              aria-valuemax="100"></div>
           </div>
         </div>
       </div>

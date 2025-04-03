@@ -1,0 +1,13 @@
+.bar {
+  position: fixed;
+  transform: rotate(90deg);
+  width: 20%;
+  right: 0%;
+  top: 50%;
+}
+.email {
+  position: fixed;
+  top: 50%;
+  left: -9%;
+  transform: rotate(270deg);
+}

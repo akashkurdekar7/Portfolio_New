@@ -11,6 +11,10 @@
   width: 350px;
   height: auto;
   border-radius: 23px;
+
+  @media screen and (max-width: 768px) {
+    width: 200px;
+  }
 }
 
 .hover_layer {
@@ -34,10 +38,17 @@
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 .social_icons:hover {
   font-size: 3.2rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1.7rem;
+  }
 }
 
 .facebook,
@@ -57,6 +68,11 @@
   left: -70%;
   transform: none;
   opacity: 1;
+
+  @media screen and (max-width: 768px) {
+    top: -50%;
+    left: -10%;
+  }
 }
 
 .hover_layer.active ~ .twitter {
@@ -64,6 +80,10 @@
   left: 200%;
   opacity: 1;
   transform: none;
+  @media screen and (max-width: 768px) {
+    top: -60%;
+    left: 10%;
+  }
 }
 
 .hover_layer.active ~ .instagram {
@@ -71,6 +91,10 @@
   left: -100%;
   transform: none;
   opacity: 1;
+  @media screen and (max-width: 768px) {
+    top: -50%;
+    left: 30%;
+  }
 }
 
 .hover_layer.active ~ .linkedin {
@@ -78,6 +102,10 @@
   left: 208%;
   transform: none;
   opacity: 1;
+  @media screen and (max-width: 768px) {
+    top: -60%;
+    left: 50%;
+  }
 }
 
 .hover_layer.active ~ .spaceship {
@@ -85,6 +113,10 @@
   left: -136%;
   transform: none;
   opacity: 1;
+  @media screen and (max-width: 768px) {
+    top: -50%;
+    left: 70%;
+  }
 }
 
 .hover_layer.active ~ .whatsapp {
@@ -92,6 +124,10 @@
   left: -46%;
   transform: none;
   opacity: 1;
+  @media screen and (max-width: 768px) {
+    top: -60%;
+    left: 90%;
+  }
 }
 
 .hover_layer.active ~ .snapchat {
@@ -99,6 +135,10 @@
   left: 150%;
   transform: none;
   opacity: 1;
+  @media screen and (max-width: 768px) {
+    top: -50%;
+    left: 110%;
+  }
 }
 
 .hover_layer:not(.active) ~ .social_icons {

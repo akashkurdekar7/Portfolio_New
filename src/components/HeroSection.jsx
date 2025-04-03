@@ -13,16 +13,16 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="p-0 position-relative" id="home">
+    <section className="pt-0 " id="home">
       <div className="container">
         <h1
           className="text-uppercase font-spiderman text-color1 text-center"
-          style={{ fontSize: "10vw" }}
+          style={{ fontSize: "15vw" }}
         >
           Kurdekar
         </h1>
       </div>
-
+<div className="position-relative">
       <div className="home_image_con">
         <img src={home} alt="iphone" className="home_img" />
         <div
@@ -91,6 +91,9 @@ const HeroSection = () => {
           <FaWhatsapp />
         </a>
       </div>
+      </div>
+
+     
     </section>
   );
 };

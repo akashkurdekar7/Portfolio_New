@@ -25,10 +25,10 @@ const App = () => {
 
       <main>
         <HeroSection />
-        <About />
-        <Skills/>
-        <Experience/>
-        <Contact/>
+        {/* <About /> */}
+        {/* <Skills/> */}
+        {/* <Experience/> */}
+        {/* <Contact/> */}
       </main>
       <Footer/>
     </>
