@@ -4,12 +4,12 @@ const About = () => {
   return (
     <section id="about">
       <div className="container h-100 d-flex justify-content-center align-items-center">
-        <div className="row tilt">
-          <div className="col-5 p-0">
+        <div className="row tilt w-100 d-flex justify-content-center align-items-center">
+          <div className="col-lg-4 col-8 p-0">
             <img src={about} alt="Spidey Developer" className="about-image" />
           </div>
-          <div className="col-7">
-            <p className="text-color1 size18">
+          <div className="col-lg-7 col-8">
+            <p className="text-color1 size16 text-center" style={{textAlign:"justify"}}>
               🕸 Just a developer🅿️ trying to sling some web and code some
               apps🅿️assionate about crafting innovative and user🅿️riendly web
               experiences🕷 I blend creativity with technology to build something
