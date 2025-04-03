@@ -61,30 +61,28 @@ const NavBar = () => {
         </motion.div>
       </div>
 
-      <div className="postion-relative">
-        {/* Floating Elements */}
-        <div className="email">
-          <h5 className="text-white size16 text-uppercase">
-            akashkurdekar39@gmail.com
-          </h5>
-        </div>
-        {/* Progress Bar */}
-        <div className="bar">
-          <div className="progress w-100 m-2" style={{height: "4px"}}>
-            <div
-              className="progress-bar text-red"
-              role="progressbar"
-              style={{
-                width: `${scrollProgress}%`,
-                background: "linear-gradient(to bottom, #e84545, #e84545)",
-                boxShadow: "0 0 5px #e84545, 0 0 10px #e84545",
-                borderRadius: "2px",
-                transition: "width 0.3s ease-in-out",
-              }}
-              aria-valuenow={scrollProgress}
-              aria-valuemin="0"
-              aria-valuemax="100"></div>
-          </div>
+      {/* Floating Elements */}
+      <div className="email">
+        <h5 className="text-white size16 text-uppercase">
+          akashkurdekar39@gmail.com
+        </h5>
+      </div>
+      {/* Progress Bar */}
+      <div className="bar">
+        <div className="progress w-100 m-2" style={{height: "4px"}}>
+          <div
+            className="progress-bar text-red"
+            role="progressbar"
+            style={{
+              width: `${scrollProgress}%`,
+              background: "linear-gradient(to bottom, #e84545, #e84545)",
+              boxShadow: "0 0 5px #e84545, 0 0 10px #e84545",
+              borderRadius: "2px",
+              transition: "width 0.3s ease-in-out",
+            }}
+            aria-valuenow={scrollProgress}
+            aria-valuemin="0"
+            aria-valuemax="100"></div>
         </div>
       </div>
     </>

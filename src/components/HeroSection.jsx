@@ -14,7 +14,7 @@ const HeroSection = () => {
 
   return (
     <section className="pt-0 " id="home">
-      <div className="container">
+      <div className="container h-100">
         <h1
           className="text-uppercase font-spiderman text-color1 text-center"
           style={{ fontSize: "15vw" }}
