@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reusable Menu Button</title>
+    <style>
+      .menu-item {
+        position: relative;
+        text-transform: uppercase;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 2rem;
+      }
+      .menu-item > div {
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        overflow: hidden;
+        display: inline-block;
+      }
+      .menu-item-text {
+        pointer-events: none;
+        display: block;
+        line-height: 1;
+        position: relative;
+      }
+      .menu-item > div:nth-child(1) span {
+        will-change: transform;
+        transform-style: preserve-3d;
+        transition: 0.5s;
+        transition-delay: calc(0.05s * var(--index));
+        transform-origin: bottom;
+        display: inline-block;
+      }
+      .menu-item > div:nth-child(2) span {
+        will-change: transform;
+        transform-style: preserve-3d;
+        transition: 0.5s;
+        transition-delay: calc(0.05s * var(--index));
+        transform-origin: top;
+        display: inline-block;
+        transform: translate3d(0, -100%, 0) rotateX(-90deg);
+      }
+      .menu-item:hover > div:nth-child(1) span {
+        transform: translate3d(0, -100%, 0) rotateX(-90deg);
+      }
+      .menu-item:hover > div:nth-child(2) span {
+        transform: translate3d(0, 0%, 0) rotateX(0deg);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="menu-item">
+      <div>
+        <span class="menu-item-text">Menu</span>
+      </div>
+    </button>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuItems = document.querySelectorAll(".menu-item");
+        menuItems.forEach((item) => {
+          let word = item.children[0].children[0].innerText.split("");
+          item.children[0].innerHTML = "";
+          word.forEach((letter, idx) => {
+            item.children[0].innerHTML += `<span style="--index:${idx}">${letter}</span>`;
+          });
+          let clonespan = item.children[0].cloneNode(true);
+          clonespan.style.position = "absolute";
+          clonespan.style.left = "0";
+          clonespan.style.top = "0";
+          item.appendChild(clonespan);
+        });
+      });
+    </script>
+  </body>
+</html>
