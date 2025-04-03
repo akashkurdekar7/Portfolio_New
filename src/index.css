@@ -31,6 +31,11 @@ section {
   height: 100vh;
   padding: 3rem 0;
 }
+img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
 
 .size450 {
   font-size: 450px;
@@ -42,9 +47,19 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
 }
-.size90 {
-  font-size: 90px;
+.size18 {
+  font-size: 18px; /* Base size for large screens (above 1920px) */
   font-weight: 700;
+  letter-spacing: 1px;
+}
+.size90 {
+  font-size: 90px; /* Base size for large screens (above 1920px) */
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.size60 {
+  font-size: 60px; /* Base size for large screens (above 1920px) */
+  font-weight: 400;
   letter-spacing: 1px;
 }
 
