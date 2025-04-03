@@ -28,6 +28,12 @@
   z-index: 2;
   transform: translate(9%, 19%);
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    width: 158px;
+    height: 128px;
+    transform: translate(12%, 20%);
+  }
 }
 .social_icons {
   position: absolute;

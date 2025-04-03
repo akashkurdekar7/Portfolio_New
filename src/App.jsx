@@ -25,7 +25,7 @@ const App = () => {
 
       <main>
         <HeroSection />
-        {/* <About /> */}
+        <About />
         {/* <Skills/> */}
         {/* <Experience/> */}
         {/* <Contact/> */}

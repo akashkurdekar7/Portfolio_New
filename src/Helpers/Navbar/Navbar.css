@@ -1,16 +1,19 @@
 .bar {
   position: fixed;
   transform: rotate(90deg);
-  width: 20%;
+  width: 10vw;
   right: 0%;
   top: 50%;
-  @media screen and (max-width: 300px) {
-    right: 10%;
+  @media screen and (max-width: 376px) {
+    width: 20%;
   }
 }
 .email {
   position: fixed;
   top: 50%;
-  left: -9%;
+  left: 0%;
   transform: rotate(270deg);
+  @media screen and (max-width: 376px) {
+    left: -18%;
+  }
 }
