@@ -1,0 +1,152 @@
+/* home css */
+
+.home_image_con {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.home_img {
+  width: 45%;
+  height: auto;
+  border-radius: 23px;
+
+  @media screen and (max-width: 768px) {
+    width: 200px;
+  }
+}
+
+.hover_layer {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 296px;
+  height: 233px;
+  background: transparent;
+  border-radius: 16px;
+  z-index: 2;
+  transform: translate(9%, 19%);
+  cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    width: 158px;
+    height: 128px;
+    transform: translate(12%, 20%);
+  }
+}
+.social_icons {
+  position: absolute;
+  font-size: 3rem;
+  color: white;
+  opacity: 0;
+  transition: font-size 0.1s ease-in-out, all 0.4s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.social_icons:hover {
+  font-size: 3.2rem;
+  @media screen and (max-width: 768px) {
+    font-size: 1.7rem;
+  }
+}
+
+.facebook,
+.linkedin,
+.instagram,
+.whatsapp,
+.snapchat,
+.spaceship,
+.twitter {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 250%);
+}
+
+.hover_layer.active ~ .facebook {
+  top: 85%;
+  left: -70%;
+  transform: none;
+  opacity: 1;
+
+  @media screen and (max-width: 768px) {
+    top: -50%;
+    left: -10%;
+  }
+}
+
+.hover_layer.active ~ .twitter {
+  top: 50%;
+  left: 200%;
+  opacity: 1;
+  transform: none;
+  @media screen and (max-width: 768px) {
+    top: -60%;
+    left: 10%;
+  }
+}
+
+.hover_layer.active ~ .instagram {
+  top: 0;
+  left: -100%;
+  transform: none;
+  opacity: 1;
+  @media screen and (max-width: 768px) {
+    top: -50%;
+    left: 30%;
+  }
+}
+
+.hover_layer.active ~ .linkedin {
+  top: 0%;
+  left: 208%;
+  transform: none;
+  opacity: 1;
+  @media screen and (max-width: 768px) {
+    top: -60%;
+    left: 50%;
+  }
+}
+
+.hover_layer.active ~ .spaceship {
+  top: 40%;
+  left: -136%;
+  transform: none;
+  opacity: 1;
+  @media screen and (max-width: 768px) {
+    top: -50%;
+    left: 70%;
+  }
+}
+
+.hover_layer.active ~ .whatsapp {
+  top: 40%;
+  left: -46%;
+  transform: none;
+  opacity: 1;
+  @media screen and (max-width: 768px) {
+    top: -60%;
+    left: 90%;
+  }
+}
+
+.hover_layer.active ~ .snapchat {
+  top: 80%;
+  left: 150%;
+  transform: none;
+  opacity: 1;
+  @media screen and (max-width: 768px) {
+    top: -50%;
+    left: 110%;
+  }
+}
+
+.hover_layer:not(.active) ~ .social_icons {
+  opacity: 0;
+}

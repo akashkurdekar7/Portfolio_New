@@ -3,75 +3,201 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reusable Menu Button</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <title>Document</title>
     <style>
-      .menu-item {
-        position: relative;
-        text-transform: uppercase;
-        cursor: pointer;
-        background: none;
-        border: none;
-        font-size: 2rem;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      .menu-item > div {
-        transform-style: preserve-3d;
-        perspective: 1000px;
-        overflow: hidden;
+      body {
+        background: white;
+      }
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 600px;
+        background: #f5f5f5;
+        box-shadow: 0 30px 50px #dbdbdb;
+      }
+
+      .container .slide .item {
+        width: 200px;
+        height: 300px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        border-radius: 20px;
+        box-shadow: 0 30px 50px #505050;
+        /* background-repeat: no-repeat; */
+        background-size: cover;
+        background-position: 50% 50%;
         display: inline-block;
+        transition: 0.5s;
       }
-      .menu-item-text {
-        pointer-events: none;
+      .slide .item:nth-child(1),
+      .slide .item:nth-child(2) {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        width: 100%;
+        border-radius: 0;
+        height: 100%;
+      }
+      .slide .item:nth-child(3) {
+        left: 50%;
+      }
+      .slide .item:nth-child(4) {
+        left: calc(50% + 220px);
+      }
+      .slide .item:nth-child(5) {
+        left: calc(50% + 440px);
+      }
+      .slide .item:nth-child(n + 6) {
+        left: calc(50% + 660px);
+        opacity: 0;
+      }
+
+      .item .content {
+        position: absolute;
+        top: 50%;
+        left: 100px;
+        text-align: left;
+        color: white;
+        transform: translate(0, -50%);
+        display: none;
+      }
+      .item:nth-child(2) .content {
         display: block;
-        line-height: 1;
-        position: relative;
       }
-      .menu-item > div:nth-child(1) span {
-        will-change: transform;
-        transform-style: preserve-3d;
-        transition: 0.5s;
-        transition-delay: calc(0.05s * var(--index));
-        transform-origin: bottom;
-        display: inline-block;
+      .content .title {
+        font-style: 40px;
+        opacity: 0;
+        animation: animate 1s ease-in-out 1 forwards;
       }
-      .menu-item > div:nth-child(2) span {
-        will-change: transform;
-        transform-style: preserve-3d;
-        transition: 0.5s;
-        transition-delay: calc(0.05s * var(--index));
-        transform-origin: top;
-        display: inline-block;
-        transform: translate3d(0, -100%, 0) rotateX(-90deg);
+      .description {
+        margin: 0 10px;
+        opacity: 0;
+        animation: animate 1s ease-in-out 0.3s 1 forwards;
       }
-      .menu-item:hover > div:nth-child(1) span {
-        transform: translate3d(0, -100%, 0) rotateX(-90deg);
+      button {
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        opacity: 0;
+        animation: animate 1s ease-in-out 0.6s 1 forwards;
       }
-      .menu-item:hover > div:nth-child(2) span {
-        transform: translate3d(0, 0%, 0) rotateX(0deg);
+
+      @keyframes animate {
+        from {
+          opacity: 0;
+          transform: translate(0, 100px);
+          filter: blur(33px);
+        }
+        to {
+          opacity: 1;
+          transform: translate(0);
+          filter: blur(0);
+        }
+      }
+
+      .next-btn,
+      .prev-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: #333;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .next-btn {
+        right: 30px;
+      }
+
+      .prev-btn {
+        left: 30px;
       }
     </style>
   </head>
   <body>
-    <button class="menu-item">
-      <div>
-        <span class="menu-item-text">Menu</span>
+    <div class="container">
+      <div class="slide">
+        <div class="item" style="background-image: url('./project.jpeg')">
+          <div class="content">
+            <h1 class="title">title 1</h1>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+              voluptates.
+            </p>
+            <button class="btn">see more</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url('./project.jpeg')">
+          <div class="content">
+            <h1 class="title">title 2</h1>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+              voluptates.
+            </p>
+            <button class="btn">see more</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url('./project.jpeg')">
+          <div class="content">
+            <h1 class="title">title 3</h1>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+              voluptates.
+            </p>
+            <button class="btn">see more</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url('./project.jpeg')">
+          <div class="content">
+            <h1 class="title">title 3</h1>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+              voluptates.
+            </p>
+            <button class="btn">see more</button>
+          </div>
+        </div>
+        <div class="item" style="background-image: url('./project.jpeg')">
+          <div class="content">
+            <h1 class="title">title 3</h1>
+            <p class="description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+              voluptates.
+            </p>
+            <button class="btn">see more</button>
+          </div>
+        </div>
       </div>
-    </button>
+
+      <div class="next-btn">
+        <i class="fas fa-arrow-right"></i>
+      </div>
+      <div class="prev-btn">
+        <i class="fas fa-arrow-left"></i>
+      </div>
+    </div>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const menuItems = document.querySelectorAll(".menu-item");
-        menuItems.forEach((item) => {
-          let word = item.children[0].children[0].innerText.split("");
-          item.children[0].innerHTML = "";
-          word.forEach((letter, idx) => {
-            item.children[0].innerHTML += `<span style="--index:${idx}">${letter}</span>`;
-          });
-          let clonespan = item.children[0].cloneNode(true);
-          clonespan.style.position = "absolute";
-          clonespan.style.left = "0";
-          clonespan.style.top = "0";
-          item.appendChild(clonespan);
-        });
+      const next = document.querySelector(".next-btn");
+      const prev = document.querySelector(".prev-btn");
+
+      next.addEventListener("click", function () {
+        let items = document.querySelectorAll(".item");
+        document.querySelector(".slide").appendChild(items[0]);
       });
     </script>
   </body>

@@ -1,14 +1,12 @@
 import React from "react";
-import "./components/section.css";
-import HeroSection from "./components/HeroSection";
 import StarsCanvas from "./components/StarsCanvas";
 import NavBar from './Helpers/Navbar/NavBar';
-import Skills from "./components/Skills";
-import About from "./components/About";
-import Experience from './components/Experience';
-import Contact from './components/Contact';
+import About from "./components/AboutSection/About";
 import Footer from './Helpers/Footer/Footer';
-import Projects from './components/Projects';
+import Hero from "./components/HeroSection/Hero";
+import Projects from "./components/ProjectSection/Projects";
+import Experience from "./components/ExperienceSection/Experience";
+import Contact from "./components/ContactSection/Contact";
 
 
 
@@ -25,12 +23,12 @@ const App = () => {
       </header>
 
       <main>
-        <HeroSection />
+        <Hero />
         <About />
         {/* <Skills/> */}
-        {/* <Projects/> */}
-        {/* <Experience/> */}
-        {/* <Contact/> */}
+        <Projects/>
+        <Experience/>
+        <Contact/>
       </main>
       <Footer/>
     </>
