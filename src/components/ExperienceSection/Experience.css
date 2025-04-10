@@ -1,9 +1,7 @@
 .timeline-container {
-  background-color: black;
   color: white;
   padding: 2rem 1rem;
   position: relative;
-  font-family: "Orbitron", sans-serif;
 }
 
 .timeline {

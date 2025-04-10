@@ -17,6 +17,19 @@
   background-color: black;
 }
 
+main {
+  margin-left: 150px;
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+
+ul,
+li,
+a {
+  text-decoration: none;
+  list-style: none;
+}
 .text-color2 {
   color: black;
 }
@@ -133,4 +146,14 @@ img {
 
 .footer-gradient {
   background: radial-gradient(circle at bottom, #e84545 50%, #000 70%);
+}
+
+/* Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

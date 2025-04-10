@@ -1,88 +1,93 @@
-import {useEffect, useState} from "react";
-import {motion} from "framer-motion";
-import Button from "../Button/Button";
+import React, {useState} from "react";
 import "./Navbar.css";
-const sections = ["about", "projects", "contact"];
+import web from "../../assets/final/nav_spider.png";
+import menu_img from "../../assets/final/nav_menu.jpeg";
+import menu_img_small from "../../assets/final/nav_menu_small.jpeg";
 
 const NavBar = () => {
-  const [activeTitles, setActiveTitles] = useState([]);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const totalHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (window.scrollY / totalHeight) * 100;
-      setScrollProgress(progress);
-
-      let newActiveTitles = [];
-      sections.forEach((section) => {
-        const sectionElement = document.getElementById(section);
-        if (sectionElement) {
-          const rect = sectionElement.getBoundingClientRect();
-          if (rect.top <= 50 && rect.bottom > 50) {
-            newActiveTitles.push(
-              section.charAt(0).toUpperCase() + section.slice(1)
-            );
-          }
-        }
-      });
-
-      setActiveTitles((prev) =>
-        JSON.stringify(prev) !== JSON.stringify(newActiveTitles)
-          ? newActiveTitles
-          : prev
-      );
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <>
-      {/* Navigation Bar */}
-      <div
-        className={`nav-container fixed-top w-100 px-4 py-2 border border-dark ${
-          activeTitles.length === 0 ? "d-none" : ""
-        }`}
-        style={{
-          backgroundColor: "#F5F5DC",
-          color: "#000",
-          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-        }}>
-        <motion.div
-          className="d-flex justify-content-center gap-4"
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}>
-          {activeTitles.map((title, index) => (
-            <Button key={index}>{title}</Button>
-          ))}
-        </motion.div>
+      <div className="navbar_con">
+        <nav className="d-flex justify-content-center ">
+          <div className="logo">
+            <h1 className="font-Halium">A</h1>
+          </div>
+          <ul className="">
+            <li>
+              <a href="#home">
+                <img src={web} alt="navigation" />
+              </a>
+            </li>
+            <li>
+              <a href="#about">
+                <img src={web} alt="navigation" />
+              </a>
+            </li>
+            <li>
+              <a href="/resume">
+                <img src={web} alt="navigation" />
+              </a>
+            </li>
+            <li
+              className={`burger_menu ${isMenuOpen ? "open" : ""}`}
+              onClick={toggleMenu}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </li>
+          </ul>
+        </nav>
       </div>
 
-      {/* Floating Elements */}
-      <div className="email">
-        <h5 className="text-white size16 text-uppercase">
-          akashkurdekar39@gmail.com
-        </h5>
-      </div>
-      {/* Progress Bar */}
-      <div className="bar">
-        <div className="progress w-100 m-2" style={{height: "4px"}}>
-          <div
-            className="progress-bar text-red"
-            role="progressbar"
-            style={{
-              width: `${scrollProgress}%`,
-              background: "linear-gradient(to bottom, #e84545, #e84545)",
-              boxShadow: "0 0 5px #e84545, 0 0 10px #e84545",
-              borderRadius: "2px",
-              transition: "width 0.3s ease-in-out",
-            }}
-            aria-valuenow={scrollProgress}
-            aria-valuemin="0"
-            aria-valuemax="100"></div>
+      <div className={`side_menu ${isMenuOpen ? "open" : ""}`}>
+        <div className="menu_sections">
+          <ul>
+            <li>
+              <a href="#home">
+                Ho<span className="line"></span>me
+              </a>
+            </li>
+            <li>
+              <a href="#about">
+                Abo<span className="line"></span>ut
+              </a>
+            </li>
+            <li>
+              <a href="#skills">
+                Ski<span className="line"></span>lls
+              </a>
+            </li>
+            <li>
+              <a href="#experience">
+                Experi<span className="line"></span>ence
+              </a>
+            </li>
+            <li>
+              <a href="#projects">
+                Pro<span className="line"></span>jects
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                Con<span className="line"></span>tact
+              </a>
+            </li>
+            <li>
+              <a href="#resume">
+                Resu<span className="line"></span>me
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="menu_image_container">
+          <img src={menu_img} alt="Menu Graphic" className="big" />
+          <img src={menu_img_small} alt="Menu Graphic" className="small" />
         </div>
       </div>
     </>

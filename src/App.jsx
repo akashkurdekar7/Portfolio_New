@@ -24,13 +24,13 @@ const App = () => {
 
       <main>
         <Hero />
-        <About />
+        {/* <About /> */}
         {/* <Skills/> */}
-        <Projects/>
-        <Experience/>
-        <Contact/>
+        {/* <Projects/> */}
+        {/* <Experience/> */}
+        {/* <Contact/> */}
       </main>
-      <Footer/>
+      {/* <Footer  style={{marginLeft:"150px"}}/> */}
     </>
   );
 };
