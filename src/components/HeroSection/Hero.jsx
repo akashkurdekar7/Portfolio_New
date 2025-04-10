@@ -77,7 +77,7 @@ const Hero = () => {
   return (
     <section className="p-0 position-relative" id="home">
       <div className="container-fluid h-100">
-        <h1 className="text-uppercase font-spiderman text-color1 text-center headliner">
+        <h1 className="text-uppercase font-spiderman text-color1 text-center size90 headliner">
           Frontend Developer
         </h1>
       </div>

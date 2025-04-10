@@ -1,0 +1,52 @@
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-card {
+  background-color: black;
+  border-left: 4px ridge #e84545;
+  border-right: 4px ridge #e84545;
+  border-radius: 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5); /* deep shadow for pop */
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: rotate(3deg) scale(1.1);
+  }
+}
+
+.img_con {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.about-image {
+  max-width: 100%;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.content {
+  flex: 2 1 500px;
+}
+
+@media (max-width: 768px) {
+  .about-card {
+    background-color: white;
+  }
+
+  .about-image {
+    width: 100%;
+    /* border-radius: 0; */
+  }
+}

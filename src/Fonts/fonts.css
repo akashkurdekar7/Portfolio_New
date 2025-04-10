@@ -1,0 +1,109 @@
+@font-face {
+  font-family: "theAmazingSpiderman";
+  src: url("../assets/fonts//The_Amazing_Spider-Man.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Halium";
+  src: url("../assets/fonts/Halimun.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "HOMOARAK";
+  src: url("../assets/fonts/HOMOARAK.TTF") format("truetype");
+  font-display: swap;
+}
+
+.textcolor1 {
+  color: white;
+}
+.textcolor2 {
+  color: black;
+}
+.textred {
+  color: #e84545;
+}
+
+.font-spiderman {
+  font-family: "theAmazingSpiderman";
+}
+.font-Halium {
+  font-family: "Halium";
+}
+.font-homoarak {
+  font-family: "HOMOARAK";
+}
+
+.size90 {
+  font-size: 90px;
+  letter-spacing: 0.23px;
+  @media (max-width: 1650px) {
+    font-size: 80px;
+  }
+  @media (max-width: 1440px) {
+    font-size: 75px;
+  }
+  @media (max-width: 1366px) {
+    font-size: 60px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 50px;
+  }
+  @media (max-width: 767px) {
+    font-size: 40px;
+  }
+  @media (max-width: 600px) {
+    font-size: 36px;
+  }
+  @media (max-width: 480px) {
+    font-size: 32px;
+  }
+  @media (max-width: 380px) {
+    font-size: 26px;
+  }
+}
+.size55 {
+  font-size: 55px;
+  @media (max-width: 1440px) {
+    font-size: 42px;
+  }
+  @media (max-width: 1199px) {
+    font-size: 36px;
+  }
+  @media (max-width: 991px) {
+    font-size: 32px;
+  }
+  @media (max-width: 480px) {
+    font-size: 26px;
+  }
+}
+.size24 {
+  font-size: 24px;
+  @media (max-width: 1366px) {
+    font-size: 18px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+.size12 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
+}
+
+.semibold {
+  font-weight: 600 !important;
+}
+.medium {
+  font-weight: 500 !important;
+}
+.bold {
+  font-weight: 700 !important;
+}
+.light {
+  font-weight: 300 !important;
+}

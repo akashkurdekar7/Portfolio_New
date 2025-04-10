@@ -1,11 +1,13 @@
 .headliner {
-  margin-top: 5.5rem;
   font-size: 15vw;
   color: yellow;
   text-shadow: -2px -2px 0 red, 2px -2px 0 red, -2px 2px 0 red, 2px 2px 0 red,
     0 0 15px rgba(255, 0, 0, 0.7);
   text-transform: uppercase;
   letter-spacing: 2px;
+  @media (max-width: 768px) {
+    margin-top: 5.5rem;
+  }
 }
 
 .home_img {
@@ -24,11 +26,11 @@
 
 .hover_layer {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  top: 50%;
+  left: 50%;
+  width: 11%;
+  height: 19%;
+  transform: translate(-14%, 30%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +42,14 @@
 }
 
 .hover_layer.active {
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: none;
 }
 /* Social Icons - Start inside image */
 .social_icons {
