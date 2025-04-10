@@ -43,6 +43,9 @@
 @media (max-width: 768px) {
   .about-card {
     background-color: white;
+    &:hover {
+      transform: none;
+    }
   }
 
   .about-image {
