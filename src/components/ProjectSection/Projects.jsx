@@ -159,7 +159,7 @@ const Project = () => {
   }, [fullscreenCard]);
 
   return (
-    <div className="project-slider-container">
+    <div className="project-slider-container" id="projects">
       <div
         ref={containerRef}
         className="project-slider-stage"
