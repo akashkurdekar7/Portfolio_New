@@ -372,7 +372,7 @@ nav {
 /* Home css */
 .home-section {
   padding: 0;
-  height: calc(100vh - 4rem);
+  /* height: calc(100vh - 4rem); */
   overflow: hidden;
   h1 {
     color: var(--text);
