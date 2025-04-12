@@ -1,8 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+@font-face {
+  font-family: "Moogalator";
+  src: url("./assets/fonts/Moogalator.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "HOMOARAK";
+  src: url("./assets/fonts/Pilowlava-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --font-mono: "Montserrat", sans-serif;
-  --font-mono: "Montserrat", sans-serif;
+  --font-mooga: "Moogalator", sans-serif;
+  --font-homo: "HOMOARAK", sans-serif;
 }
 
 :root.darkmode {
@@ -87,7 +103,7 @@ nav {
   }
   .logo {
     color: var(--text);
-    font-family: var(--font-mono);
+    font-family: var(--font-mooga);
   }
   .menu {
     position: absolute;
@@ -394,9 +410,10 @@ nav {
 
   .letter1,
   .letter2 {
+    font-family: var(--font-homo);
     font-size: 30vw;
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     pointer-events: none;
     transition: all 0.3s ease;
     animation: shake 1s infinite linear;
