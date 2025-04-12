@@ -698,8 +698,20 @@ nav {
 }
 
 /* contact css */
-.contact{
-  
+.contact {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  h1 {
+    color: var(--text);
+  }
+  a {
+    text-decoration: none;
+    color: var(--text);
+  }
 }
 
 /* footer css */
