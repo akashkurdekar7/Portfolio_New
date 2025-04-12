@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import About from './components/About';
 import Error from './components/Error';
+import Experience from "./components/Experience";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/experience" element={<Experience />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </main>

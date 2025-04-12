@@ -8,8 +8,15 @@
   font-display: swap;
 }
 @font-face {
-  font-family: "HOMOARAK";
+  font-family: "Pilowlava";
   src: url("./assets/fonts/Pilowlava-Regular.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BUMBBLED";
+  src: url("./assets/fonts/BUMBBLED.OTF") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -19,6 +26,7 @@
   --font-mono: "Montserrat", sans-serif;
   --font-mooga: "Moogalator", sans-serif;
   --font-homo: "HOMOARAK", sans-serif;
+  --font-hello: "BUMBBLED", sans-serif;
 }
 
 :root.darkmode {
@@ -101,7 +109,8 @@ header {
   }
 }
 nav {
-  height: 4rem;
+  /* height: 4rem; */
+  height: 100%;
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
@@ -110,7 +119,9 @@ nav {
     padding: 0;
   }
   .logo {
+    text-decoration: none;
     color: var(--text);
+    font-size: 3vw;
     font-family: var(--font-mooga);
   }
   .menu {
@@ -238,7 +249,7 @@ nav {
   .mode,
   .language-switch {
     font-size: 24px;
-    font-family: var(--font-mono);
+    font-family: var(--font-hello);
     color: var(--text);
     @media (max-width: 768px) {
       font-size: 18px;
@@ -482,7 +493,10 @@ nav {
   align-items: center;
   height: 100vh;
   flex-direction: column;
+  overflow: hidden;
+  position: relative;
   h2 {
+    text-transform: uppercase;
     color: var(--text);
     font-family: var(--font-homo);
   }
@@ -522,6 +536,194 @@ nav {
     @media (max-width: 768px) {
       height: 100%;
     }
+  }
+  .outline-text {
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text);
+    text-stroke: 1px solid var(--accent);
+    transition: all 0.3s ease;
+    &:hover {
+      -webkit-text-stroke: 1px var(--accent);
+      text-stroke: 1px solid var(--accent);
+      -webkit-text-fill-color: var(--bg);
+      text-fill-color: var(--bg);
+    }
+  }
+
+  .letter1,
+  .letter2,
+  .letter3,
+  .letter4,
+  .letter5 {
+    font-family: var(--font-homo);
+    font-size: 30vw;
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    animation: shake 1s infinite linear;
+  }
+
+  .letter1.hovered,
+  .letter2.hovered,
+  .letter3.hovered,
+  .letter4.hovered,
+  .letter5.hovered {
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    font-size: 22vw;
+  }
+
+  .letter1.hovered {
+    left: 10%;
+  }
+  .letter2.hovered {
+    left: 25%;
+  }
+  .letter3.hovered {
+    left: 40%;
+  }
+  .letter4.hovered {
+    left: 55%;
+  }
+  .letter5.hovered {
+    left: 70%;
+  }
+
+  .letter1,
+  .letter2,
+  .letter3,
+  .letter4,
+  .letter5 {
+    position: absolute;
+    filter: blur(10px);
+    font-size: 50vw;
+  }
+  .letter1 {
+    left: 5%;
+    position: absolute;
+    top: 0%;
+    transform: translateY(-55%);
+  }
+
+  .letter2 {
+    position: absolute;
+    right: 5%;
+    top: 0%;
+    transform: translateY(-50%);
+  }
+  .letter3 {
+    left: 0%;
+    position: absolute;
+    bottom: 0%;
+    transform: translateY(60%);
+  }
+  .letter4 {
+    right: 0%;
+    position: absolute;
+    bottom: 0%;
+    transform: translateY(60%);
+  }
+  .letter5 {
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes shake {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(1deg);
+    }
+    50% {
+      transform: rotate(-1deg);
+    }
+    75% {
+      transform: rotate(1deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+/* Experience css */
+.experience {
+  .timeline {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 60%;
+    width: 2px;
+    background-color: var(--text);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .timeline-item.left {
+    flex-direction: row-reverse;
+  }
+
+  .timeline-item .content {
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 10px var(--text);
+    width: 100%;
+    max-width: 400px;
+    color: var(--text) !important;
+  }
+
+  .timeline-item.left .content {
+    margin-right: 50px;
+  }
+
+  .timeline-item.right .content {
+    margin-left: 50px;
+  }
+
+  .timeline-item .content p {
+    margin: 5px 0;
+  }
+
+  .timeline-item .date {
+    font-weight: bold;
+    color: var(--text);
+  }
+
+  .timeline-item .company {
+    font-size: 1.2rem;
+    color: var(--text);
+  }
+
+  .timeline-item .title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .timeline-item .desc {
+    font-size: 0.9rem;
+    color: var(--text);
   }
 }
 

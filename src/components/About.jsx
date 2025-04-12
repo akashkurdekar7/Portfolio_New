@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 // import about from "../assets/final/about.jpeg";
 
 const About = () => {
+
+  const [hover, setHover] = useState(false);
+  
+    const isHovered = () => {
+      setHover(!hover);
+      console.log("hovered", hover);
+    };
+
+
   return (
     <section className="about">
 
@@ -11,7 +20,9 @@ const About = () => {
           <img src={about} alt="Spidey Developer" className="about-image " />
         </div> */}
         <div className="content p-3 text-center">
-          <h2 className="">
+          <h2 className={`outline-text name ${hover ? "hovered" : ""}`}
+            onMouseEnter={isHovered}
+            onMouseLeave={isHovered}>
             about
           </h2>
           <p className="mb-3">
@@ -33,6 +44,12 @@ const About = () => {
           </p>
         </div>
       </div>
+
+      <span className={`letter1 ${hover ? "hovered" : ""}`}>A</span>
+      <span className={`letter2 ${hover ? "hovered" : ""}`}>B</span>
+      <span className={`letter3 ${hover ? "hovered" : ""}`}>O</span>
+      <span className={`letter4 ${hover ? "hovered" : ""}`}>U</span>
+      <span className={`letter5 ${hover ? "hovered" : ""}`}>T</span>
     </section>
   );
 };

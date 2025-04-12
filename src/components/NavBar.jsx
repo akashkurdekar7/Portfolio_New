@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { FaSun, FaMoon, FaFireAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";  // Import Link
+import { Link } from "react-router-dom"; 
 import menu from "../assets/final/nav_menu.jpeg";
 
 const NavBar = () => {
   const [active, setActive] = useState(false);
   const [theme, setTheme] = useState("darkmode");
-  const [language, setLanguage] = useState("EN");
+  const [language, setLanguage] = useState("hello");
 
   const navIcon = () => {
     setActive((prev) => !prev);
@@ -22,8 +22,8 @@ const NavBar = () => {
     setTheme(nextTheme);
   };
 
-  const cycleLanguage = () => {
-    const languages = ["EN", "KN", "HN", "TL"];
+  const Greetings = () => {
+    const languages = ["hello", "ನಮಸ್ಕಾರ", "नमस्ते", "హలో","ഹലോ0","bonjour"];
     const currentIndex = languages.indexOf(language);
     const nextLanguage = languages[(currentIndex + 1) % languages.length];
     setLanguage(nextLanguage);
@@ -50,7 +50,7 @@ const NavBar = () => {
           <h3
             className="language-switch fw-bold mb-0"
             role="button"
-            onClick={cycleLanguage}
+            onClick={Greetings}
             style={{
               cursor: "pointer",
               transition: "transform 0.3s ease-in-out",
