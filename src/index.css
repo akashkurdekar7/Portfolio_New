@@ -503,3 +503,9 @@ footer {
     }
   }
 }
+
+.goog-te-banner-frame,
+.goog-logo-link,
+.goog-te-gadget {
+  display: none !important;
+}
