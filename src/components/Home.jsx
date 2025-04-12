@@ -36,7 +36,7 @@ const Home = () => {
         </motion.h3>
 
         <motion.a
-          href="#contact"
+          href="/contact"
           className="btn  mt-4 text-uppercase"
           whileHover={{scale: 1.1}}
           whileTap={{scale: 0.95}}>
