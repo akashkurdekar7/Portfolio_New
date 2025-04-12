@@ -95,7 +95,7 @@ const NavBar = () => {
         <div className="menu-content">
           <ul className="w-100">
             <li onClick={()=>setActive(!active)}>
-              <Link to="/home">
+              <Link to="/">
                 Ho<span className="line"></span>me
               </Link>
             </li>

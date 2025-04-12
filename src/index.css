@@ -508,7 +508,7 @@ nav {
     align-items: center;
   }
   img {
-    border-radius: 1rem 0 0 1rem;
+    border-radius: 0;
     @media (max-width: 768px) {
       border-radius: 0;
     }
