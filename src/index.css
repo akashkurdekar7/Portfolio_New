@@ -64,7 +64,8 @@
 
 ul,
 li,
-a {
+a,
+Link {
   text-decoration: none;
   list-style: none;
 }
@@ -78,6 +79,13 @@ img {
   object-fit: cover;
   width: 100%;
   height: auto;
+}
+
+.size18 {
+  font-size: 18px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 /* navbar css */
@@ -467,6 +475,56 @@ nav {
   }
 }
 
+/* about css */
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  h2 {
+    color: var(--text);
+    font-family: var(--font-homo);
+  }
+  p {
+    color: var(--text);
+    font-family: var(--font-mono);
+  }
+  .about-card {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 60%;
+    min-height: 100vh;
+    @media (max-width: 768px) {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+  .img_con {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  img {
+    border-radius: 1rem 0 0 1rem;
+    @media (max-width: 768px) {
+      border-radius: 0;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+    @media (max-width: 768px) {
+      height: 100%;
+    }
+  }
+}
+
 /* footer css */
 footer {
   color: var(--text);
@@ -504,8 +562,23 @@ footer {
   }
 }
 
-.goog-te-banner-frame,
-.goog-logo-link,
-.goog-te-gadget {
-  display: none !important;
+/* error css */
+.error {
+  text-transform: capitalize;
+  h1 {
+    color: var(--text);
+    font-family: var(--font-mono);
+  }
+  p {
+    color: var(--text);
+  }
+  .btn {
+    color: var(--accent);
+    border: 1px solid var(--text);
+    &:hover {
+      color: var(--accent);
+      border: 1px solid var(--text);
+      background-color: var(--bg);
+    }
+  }
 }

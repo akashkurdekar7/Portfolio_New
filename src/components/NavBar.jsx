@@ -1,10 +1,11 @@
-import React, {useEffect, useState} from "react";
-import {FaSun, FaMoon, FaFireAlt} from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaSun, FaMoon, FaFireAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";  // Import Link
 import menu from "../assets/final/nav_menu.jpeg";
+
 const NavBar = () => {
   const [active, setActive] = useState(false);
   const [theme, setTheme] = useState("darkmode");
-
   const [language, setLanguage] = useState("EN");
 
   const navIcon = () => {
@@ -20,6 +21,7 @@ const NavBar = () => {
         : "darkmode";
     setTheme(nextTheme);
   };
+
   const cycleLanguage = () => {
     const languages = ["EN", "KN", "HN", "TL"];
     const currentIndex = languages.indexOf(language);
@@ -42,7 +44,7 @@ const NavBar = () => {
   return (
     <nav>
       <div className="container-fluid d-flex justify-content-between align-items-center">
-        <h2 className="logo m-0">ak</h2>
+        <Link to={"/"} className="logo m-0">ak</Link>
 
         <div className="d-flex justify-content-center align-items-center gap-5">
           <h3
@@ -56,7 +58,8 @@ const NavBar = () => {
             onMouseOver={(e) =>
               (e.currentTarget.style.transform = "scale(1.2)")
             }
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}>
+            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          >
             {language}
           </h3>
 
@@ -70,12 +73,14 @@ const NavBar = () => {
             onMouseOver={(e) =>
               (e.currentTarget.style.transform = "scale(1.2)")
             }
-            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}>
+            onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+          >
             {renderIcon()}
           </div>
           <div
             className={`dotgrid ${active ? "active" : ""}`}
-            onClick={navIcon}>
+            onClick={navIcon}
+          >
             {[...Array(10)].map((_, i) => (
               <div key={i} className="dot" />
             ))}
@@ -85,45 +90,44 @@ const NavBar = () => {
 
       <div className={`menu ${active ? "show" : ""}`}>
         <div className="img">
-          <img src={menu} alt="" />
+          <img src={menu} alt="Menu Background" />
         </div>
-        <div
-          className="menu-content">
+        <div className="menu-content">
           <ul className="w-100">
-            <li>
-              <a href="#home">
+            <li onClick={()=>setActive(!active)}>
+              <Link to="/home">
                 Ho<span className="line"></span>me
-              </a>
+              </Link>
             </li>
-            <li>
-              <a href="#about">
+            <li onClick={()=>setActive(!active)}>
+              <Link to="/about">
                 Abo<span className="line"></span>ut
-              </a>
+              </Link>
             </li>
-            {/* <li>
-              <a href="#skills">
+            {/* <li onClick={()=>setActive(!active)}>
+              <Link to="/skills">
                 Ski<span className="line"></span>lls
-              </a>
+              </Link>
             </li> */}
-            <li>
-              <a href="#experience">
+            <li onClick={()=>setActive(!active)}>
+              <Link to="/experience">
                 Experi<span className="line"></span>ence
-              </a>
+              </Link>
             </li>
-            <li>
-              <a href="#projects">
+            <li onClick={()=>setActive(!active)}>
+              <Link to="/projects">
                 Pro<span className="line"></span>jects
-              </a>
+              </Link>
             </li>
-            <li>
-              <a href="#contact">
+            <li onClick={()=>setActive(!active)}>
+              <Link to="/contact">
                 Con<span className="line"></span>tact
-              </a>
+              </Link>
             </li>
-            <li>
-              <a href="#resume">
+            <li onClick={()=>setActive(!active)}>
+              <Link to="/resume">
                 Resu<span className="line"></span>me
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

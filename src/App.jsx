@@ -3,22 +3,29 @@ import StarsCanvas from "./components/StarsCanvas";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Footer from './components/Footer';
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import About from './components/About';
+import Error from './components/Error';
 
 const App = () => {
   return (
-    <>
+    <Router>
       <div className="canvasbg">
         <StarsCanvas />
       </div>
-      <header >
+      <header>
         <NavBar />
       </header>
 
       <main>
-        <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
       </main>
-        <Footer/>
-    </>
+      <Footer />
+    </Router>
   );
 };
 
