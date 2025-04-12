@@ -1,13 +1,11 @@
-import {useState, useRef, Suspense, useEffect} from "react";
-import {Canvas, useFrame} from "@react-three/fiber";
-import {Points, PointMaterial, Preload} from "@react-three/drei";
+import { useState, useRef, Suspense } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 
-const Stars = ({color}) => {
+const Stars = (props) => {
   const ref = useRef();
-  const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(5000), {radius: 1.2})
-  );
+  const [sphere] = useState(() => random.inSphere(new Float32Array(5000), { radius: 1.2 }));
 
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10;
@@ -16,10 +14,10 @@ const Stars = ({color}) => {
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
-      <Points ref={ref} positions={sphere} stride={3} frustumCulled>
+      <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
-          color={color}
+          color='white'
           size={0.003}
           sizeAttenuation={true}
           depthWrite={false}
@@ -30,35 +28,13 @@ const Stars = ({color}) => {
 };
 
 const StarsCanvas = () => {
-  const [bgColor, setBgColor] = useState("#000000");
-  const [starColor, setStarColor] = useState("#ffffff");
-
-  const getCssVar = (name) =>
-    getComputedStyle(document.documentElement).getPropertyValue(name).trim();
-
-  useEffect(() => {
-    const updateColors = () => {
-      const star = getCssVar("--text"); // or any color you want
-      setStarColor(star || "#ffffff");
-    };
-
-    updateColors();
-
-    const observer = new MutationObserver(updateColors);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div className="w-full h-100 absolute inset-0 z-[-1]">
-      <Canvas camera={{position: [0, 0, 1]}}>
+    <div className='w-full h-100 absolute inset-0 z-[-1]'>
+      <Canvas camera={{ position: [0, 0, 1] }} >
         <Suspense fallback={<div>Loading...</div>}>
-          <Stars color={starColor} />
+          <Stars />
         </Suspense>
+
         <Preload all />
       </Canvas>
     </div>
@@ -67,7 +43,8 @@ const StarsCanvas = () => {
 
 export default StarsCanvas;
 
-// when using mode use this
+
+// when using mode use this 
 // import { useState, useRef, Suspense, useEffect } from "react";
 // import { Canvas, useFrame } from "@react-three/fiber";
 // import { Points, PointMaterial, Preload } from "@react-three/drei";
