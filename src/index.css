@@ -108,7 +108,7 @@ nav {
     align-items: center;
     transition: transform 0.3s ease, opacity 0.3s ease;
     @media (max-width: 768px) {
-      height: 100vh;
+      height: calc(100vh - 5rem);
       padding: 1rem 0;
       top: 5rem;
       flex-direction: column;
