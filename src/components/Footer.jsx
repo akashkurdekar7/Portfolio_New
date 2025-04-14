@@ -17,8 +17,8 @@ return ()=> clearInterval(timer);
     <footer className='position-absolute bottom-0 w-100'>
     {/* <footer className=' w-100'> */}
     <div className="d-flex justify-content-between align-items-center footer_content">
-      <h3 className='email' >akashkurdekar39@gmail.com</h3>
-      <div className="dateTime">
+      <h3 className='email size18' >akashkurdekar39@gmail.com</h3>
+      <div className="dateTime size18">
         <span>{date}</span>
         <span>{time}</span>
       </div>
