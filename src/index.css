@@ -244,6 +244,7 @@ nav {
   }
 
   .menu ul li a:hover .line {
+    margin-right: 2rem;
     width: 40px;
   }
   .mode,
@@ -686,6 +687,7 @@ nav {
     left: 0;
   }
   .timeline-item.right {
+    color: var(--text);
   }
   .timeline-item .content {
     border-radius: 10px;

@@ -101,7 +101,7 @@ const NavBar = () => {
             </li>
             <li onClick={()=>setActive(!active)}>
               <Link to="/about">
-                Abo<span className="line"></span>ut
+                Ab<span className="line"></span>out
               </Link>
             </li>
             {/* <li onClick={()=>setActive(!active)}>
@@ -121,7 +121,7 @@ const NavBar = () => {
             </li>
             <li onClick={()=>setActive(!active)}>
               <Link to="/contact">
-                Con<span className="line"></span>tact
+                Cont<span className="line"></span>act
               </Link>
             </li>
             <li onClick={()=>setActive(!active)}>
