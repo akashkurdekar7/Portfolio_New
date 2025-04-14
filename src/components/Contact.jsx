@@ -77,7 +77,7 @@ const Contact = () => {
               className="col-12 col-md-5 mb-4 text-center text-md-end"
               variants={fadeUp}
               custom={3}>
-              <div className="d-flex justify-content-center justify-md-content-end align-items-center gap-2 mt-2">
+              <div className="d-flex justify-content-center justify-content-md-end align-items-center gap-2  me-5">
                 <img src={mail} alt="mail me" className="email_icon" />
                 <h3 className="size18 m-0">Email:</h3>
               </div>
