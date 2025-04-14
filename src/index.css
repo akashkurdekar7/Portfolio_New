@@ -26,7 +26,7 @@
   --font-mono: "Montserrat", sans-serif;
   --font-mooga: "Moogalator", sans-serif;
   --font-homo: "HOMOARAK", sans-serif;
-  --font-hello: "BUMBBLED", sans-serif;
+  --font-hello: "BUMBBLED", "Montserrat", sans-serif;
 }
 
 :root.darkmode {
@@ -47,11 +47,14 @@
   --accent: #1a1a1a;
 }
 
-* {
+:where(*),
+:where(*::before),
+:where(*::after) {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 /* main {
   margin-left: 150px;
   @media (max-width: 768px) {
@@ -74,8 +77,9 @@ ul,
 li,
 a,
 Link {
-  text-decoration: none;
-  list-style: none;
+  text-decoration: none !important;
+  list-style: none !important;
+  color: var(--text) !important;
 }
 
 section {
@@ -91,8 +95,11 @@ img {
 
 .size18 {
   font-size: 18px;
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     font-size: 12px;
+  }
+  @media (max-width: 768px) {
+    font-size: 10px;
   }
 }
 
@@ -402,12 +409,14 @@ nav {
     text-transform: capitalize;
     color: var(--text);
   }
-  a {
-    border: 1px solid var(--text);
-    color: var(--text);
+  a,
+  .btn {
+    border: 1px solid var(--text) !important;
+    color: var(--text) !important;
+    transition: all 0.3s ease;
     &:hover {
-      background-color: var(--text);
-      color: var(--bg);
+      background-color: var(--text) !important;
+      color: var(--bg) !important;
     }
   }
   .name {
@@ -431,12 +440,12 @@ nav {
   .letter1,
   .letter2 {
     font-family: var(--font-homo);
-    font-size: 30vw;
+    font-size: clamp(2rem, 10vw, 15rem);
+
     position: absolute;
     z-index: -1;
     pointer-events: none;
     transition: all 0.3s ease;
-    animation: shake 1s infinite linear;
   }
 
   .letter1.hovered {
@@ -466,24 +475,6 @@ nav {
     position: absolute;
     transform: translateY(40%);
     filter: blur(10px);
-  }
-
-  @keyframes shake {
-    0% {
-      transform: rotate(0deg);
-    }
-    25% {
-      transform: rotate(1deg);
-    }
-    50% {
-      transform: rotate(-1deg);
-    }
-    75% {
-      transform: rotate(1deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
   }
 }
 
@@ -714,6 +705,9 @@ nav {
     background: var(--text);
     border: none;
     margin: 2rem 0;
+    @media (max-width: 1024px) {
+      margin: 1rem 0;
+    }
   }
 
   h1 {
@@ -739,6 +733,46 @@ nav {
       transform: scale(1.2);
     }
   }
+  .email_img {
+    width: 312px;
+    position: absolute;
+    height: auto;
+    top: 50%;
+    left: 23%;
+    @media (max-width: 768px) {
+      width: 150px;
+    }
+  }
+  .email_icon {
+    width: 30px;
+  }
+  .social-links {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    a {
+      width: max-content;
+    }
+  }
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column-reverse;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .email_img {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: rotate(325deg);
+    }
+  }
 }
 
 /* footer css */
@@ -746,12 +780,30 @@ footer {
   color: var(--text);
   font-family: var(--font-mono);
   padding: 1rem;
+
   .footer_content {
     margin: 2rem 5rem;
+    position: relative;
   }
+
   .email {
     margin: 0;
+    position: relative;
+    transition: all 0.6s ease-in-out;
   }
+
+  .contact-email {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .animate-email {
+    opacity: 1;
+    transition: all 0.6s ease-in-out;
+  }
+
   .dateTime {
     display: flex;
     justify-content: center;
@@ -760,11 +812,8 @@ footer {
     color: var(--text);
     font-family: var(--font-mono);
   }
+
   @media (max-width: 768px) {
-    .email,
-    .dateTime {
-      font-size: 10px;
-    }
     .dateTime {
       gap: 5px;
     }
@@ -780,6 +829,20 @@ footer {
 /* error css */
 .error {
   text-transform: capitalize;
+  img {
+    @media (max-width: 768px) {
+      width: 50%;
+    }
+  }
+  .btn {
+    border: 1px solid var(--text) !important;
+    color: var(--text) !important;
+    transition: all 0.3s ease;
+    &:hover {
+      background-color: var(--text) !important;
+      color: var(--bg) !important;
+    }
+  }
   h1 {
     color: var(--text);
     font-family: var(--font-mono);

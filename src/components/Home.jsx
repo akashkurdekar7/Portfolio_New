@@ -1,12 +1,12 @@
 import React, {useState} from "react";
 import {motion} from "framer-motion";
+import {Link} from "react-router-dom";
 
 const Home = () => {
   const [hover, setHover] = useState(false);
 
   const isHovered = () => {
     setHover(!hover);
-    console.log("hovered", hover);
   };
   return (
     <section
@@ -35,13 +35,17 @@ const Home = () => {
           engineer | frontend developer | UI/UX enthusiast
         </motion.h3>
 
-        <motion.a
-          href="/contact"
-          className="btn  mt-4 text-uppercase"
-          whileHover={{scale: 1.1}}
-          whileTap={{scale: 0.95}}>
-          ping me up!
-        </motion.a>
+        
+
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="mt-4"
+        >
+          <Link to="/contact" className="btn text-uppercase">
+            ping me up!
+          </Link>
+        </motion.div>
       </div>
 
       <span className={`letter1 ${hover ? "hovered" : ""}`}>A</span>
