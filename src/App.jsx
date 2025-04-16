@@ -8,6 +8,8 @@ import About from './components/About';
 import Error from './components/Error';
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
+import Practise from './practise/practise';
+import UnderProcess from "./components/UnderProcess";
 
 const App = () => {
   return (
@@ -23,9 +25,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          {/* <Route path="/projects" element={<Projects />} /> */}
           {/* <Route path="/experience" element={<Experience />} /> */}
           <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<Error />} />
+          <Route path="/p" element={<Practise />} />
+          {/* <Route path="*" element={<Error />} /> */}
+          <Route path="*" element={<UnderProcess />} />
         </Routes>
       </main>
       <Footer />
