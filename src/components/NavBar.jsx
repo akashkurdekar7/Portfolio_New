@@ -131,9 +131,9 @@ const NavBar = () => {
               </Link>
             </li>
             <li onClick={() => setActive(!active)}>
-              <Link to="/resume">
+              <a href="/Akash_BE_CSE_2024.pdf" download>
                 Resu<span className="line"></span>me
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
