@@ -499,7 +499,7 @@ nav {
     text-transform: capitalize;
     color: var(--text);
   }
-  a,
+
   .btn {
     border: 1px solid var(--text) !important;
     color: var(--text) !important;
@@ -620,15 +620,14 @@ nav {
   }
   .outline-text {
     font-weight: 900;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--text);
-    text-stroke: 1px solid var(--accent);
+    /* text-stroke: 1px solid var(--accent); */
     transition: all 0.3s ease;
     &:hover {
-      -webkit-text-stroke: 1px var(--accent);
-      text-stroke: 1px solid var(--accent);
+      -webkit-text-stroke: 1px var(--text);
+      /* -webkit-text-stroke: 1px var(--accent); */
+      /* text-stroke: 1px solid var(--accent); */
       -webkit-text-fill-color: var(--bg);
-      text-fill-color: var(--bg);
+      /* text-fill-color: var(--bg); */
     }
   }
 
