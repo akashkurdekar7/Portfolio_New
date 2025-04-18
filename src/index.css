@@ -40,7 +40,6 @@
   --text: #1a1a1a;
   --accent: #e84545;
 }
-
 :root.redmode {
   --bg: #e84545;
   --text: #fff;
@@ -53,6 +52,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor: none;
 }
 
 /* main {
@@ -64,6 +64,24 @@
 
 body {
   overflow: hidden;
+}
+html,
+body,
+*,
+*:hover,
+*:active,
+*:focus {
+  cursor: none !important;
+}
+input,
+textarea,
+button,
+select,
+label,
+a,
+img,
+[role="button"] {
+  cursor: none !important;
 }
 .canvasbg {
   position: fixed;
@@ -96,14 +114,83 @@ img {
   height: auto;
 }
 
+.size90 {
+  font-size: 90px;
+  @media (max-width: 1650px) {
+    font-size: 80px;
+  }
+  @media (max-width: 1440px) {
+    font-size: 75px;
+  }
+  @media (max-width: 1366px) {
+    font-size: 60px;
+  }
+  @media (max-width: 1024px) {
+    font-size: 50px;
+  }
+  @media (max-width: 767px) {
+    font-size: 40px;
+  }
+  @media (max-width: 600px) {
+    font-size: 36px;
+  }
+  @media (max-width: 480px) {
+    font-size: 32px;
+  }
+  @media (max-width: 380px) {
+    font-size: 26px;
+  }
+}
 .size18 {
   font-size: 18px;
+  letter-spacing: 0.5px;
   @media (max-width: 1024px) {
     font-size: 12px;
   }
   @media (max-width: 768px) {
     font-size: 10px;
   }
+}
+.size32 {
+  font-size: 32px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  letter-spacing: 0.23px;
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+}
+
+/* Cursor css */
+.inner-cursor {
+  z-index: 9999;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  mix-blend-mode: difference;
+  background-color: var(--text);
+  border-radius: 50%;
+  transition: width 0.2s ease, height 0.2s ease;
+  pointer-events: none;
+  transform-origin: center;
+}
+.inner-cursor.grow {
+  height: 60px;
+  width: 60px;
+}
+.outer-cursor {
+  z-index: 9999;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: width 0.2s ease, height 0.2s ease;
 }
 
 /* navbar css */
@@ -249,12 +336,12 @@ nav {
     display: block;
     height: 2px;
     width: 0;
-    background-color: var(--accent);
+    background-color: var(--text);
     transition: width 0.3s ease-in-out;
   }
 
   .menu ul li a:hover .line {
-    margin-right: 2rem;
+    margin-right: 2vw;
     width: 40px;
   }
   .mode,
@@ -274,7 +361,7 @@ nav {
   .dotgrid {
     position: relative;
     padding: 25px;
-    cursor: pointer;
+    /* cursor: pointer; */
     overflow: hidden;
     @media (max-width: 768px) {
       padding: 18px;
@@ -424,19 +511,18 @@ nav {
   }
   .name {
     text-transform: uppercase;
-    cursor: help;
+    /* cursor: help; */
   }
   .outline-text {
     font-weight: 900;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--text);
-    text-stroke: 1px solid var(--accent);
+    /* text-stroke: 1px solid var(--accent); */
     transition: all 0.3s ease;
     &:hover {
-      -webkit-text-stroke: 1px var(--accent);
-      text-stroke: 1px solid var(--accent);
+      -webkit-text-stroke: 1px var(--text);
+      /* -webkit-text-stroke: 1px var(--accent); */
+      /* text-stroke: 1px solid var(--accent); */
       -webkit-text-fill-color: var(--bg);
-      text-fill-color: var(--bg);
+      /* text-fill-color: var(--bg); */
     }
   }
 
@@ -693,6 +779,72 @@ nav {
   }
 }
 
+/* projects css */
+.projects {
+  .title-row {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    align-items: stretch;
+  }
+
+  .box {
+    border: 2px solid white;
+    padding: 1rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* cursor: pointer; */
+    transition: background 0.3s ease;
+
+    h1 {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      font-size: 1.5rem;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+
+  .display {
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 10rem);
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .desc {
+      color: var(--text, white);
+      font-size: 1.5rem;
+      margin: 0 6rem;
+      text-align: center;
+    }
+
+    .image {
+      height: 60vh;
+      margin: 2rem 6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        height: 100%;
+        border: 2px solid #fff;
+        position: relative;
+      }
+    }
+  }
+}
+
 /* contact css */
 .contact {
   .container {
@@ -731,7 +883,7 @@ nav {
     width: 50px;
     height: auto;
     transition: transform 0.3s ease;
-    cursor: pointer;
+    /* cursor: pointer; */
 
     &:hover {
       transform: scale(1.2);
