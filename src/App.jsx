@@ -2,7 +2,6 @@ import React from "react";
 import StarsCanvas from "./components/StarsCanvas";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import Footer from './components/Footer';
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import About from './components/About';
 import Error from './components/Error';
@@ -33,7 +32,7 @@ const App = () => {
           <Route path="*" element={<UnderProcess />} />
         </Routes>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </Router>
   );
 };
