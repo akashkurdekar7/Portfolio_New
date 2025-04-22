@@ -9,7 +9,7 @@ import roadSafetyImg from "../assets/projects/roadsafety.jpg";
 import royalBrothersImg from "../assets/projects/royalbrothers.png";
 import moneyConvertImg from "../assets/projects/money-5459709_1280.png";
 import { useState } from "react";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 const projectData = [
@@ -39,7 +39,7 @@ const Projects = () => {
               src={projectData[hoveredIdx].img}
               alt={projectData[hoveredIdx].title}
               className="h-100 rounded cursor-pointer"
-              onClick={() => navigate(`/project/${slugify(projectData[hoveredIdx].title)}`)}
+              onClick={() => navigate(`/projects/${slugify(projectData[hoveredIdx].title)}`)}
             />
           </div>
 
@@ -56,16 +56,22 @@ const Projects = () => {
                   key={idx}
                   onMouseEnter={() => setHoveredIdx(idx)}
                   onClick={() => navigate(`/projects/${slugify(p.title)}`)}
-                  className={`size18 cursor-pointer ${hoveredIdx === idx ? "hovered fw-bolder" : "fw-normal"}`}
+                  className={`size18 cursor-pointer project-list-item ${hoveredIdx === idx ? "hovered fw-bolder" : "fw-normal"}`}
                   style={{
                     color: hoveredIdx === idx ? "var(--accent)" : "var(--text)",
-                    background: hoveredIdx === idx ? "#000" : "transparent",
                     padding: 0,
                   }}
                 >
                   <div className="size18 position-relative d-flex justify-content-between align-items-center w-100 p-3">
-                    <p className="size18 p-0 m-0">{p.title}</p>
-                    <FiArrowUpRight />
+                    <span
+                      className={`project-title-inner${hoveredIdx === idx ? " hovered" : ""}`}
+                    >
+                      {/* Show arrow only when hovered */}
+                      {hoveredIdx === idx && (
+                        <FiArrowRight className="me-2 project-arrow" />
+                      )}
+                      {p.title}
+                    </span>
                   </div>
                 </li>
               ))}
@@ -73,6 +79,25 @@ const Projects = () => {
           </div>
         </div>
       </div>
+      {/* Inline style or move to your CSS file */}
+      <style>{`
+        .project-list-item {
+          transition: background 0.3s, color 0.3s;
+        }
+        .project-title-inner {
+          display: flex;
+          align-items: center;
+          transition: transform 0.3s cubic-bezier(.4,0,.2,1), color 0.3s;
+          transform: translateX(0);
+        }
+        .project-title-inner.hovered {
+          transform: translateX(18px);
+        }
+        .project-arrow {
+          font-size: 1.2em;
+          transition: color 0.3s;
+        }
+      `}</style>
     </section>
   );
 };
