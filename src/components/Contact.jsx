@@ -75,11 +75,11 @@ const Contact = () => {
         <div className="container-fluid">
           <div className="row justify-content-center align-items-center">
             <motion.div
-              className="col-12 col-md-5 mb-4 text-center text-md-end"
+              className="col-12 col-md-5  text-center text-md-end"
               variants={fadeUp}
               custom={3}
             >
-              <div className="d-flex justify-content-center justify-content-md-end align-items-center gap-2 flex-column flex-md-row  me--md-5">
+              <div className="d-flex justify-content-center justify-content-md-end align-items-center gap-2 flex-column flex-md-row mt-md-0 mt-4  me-md-5">
                 <div className="d-flex justify-content-center align-items-center flex-row gap-2">
                 <img src={mail} alt="mail me" className="email_icon mail" />
                 <h3 className="size18 m-0 mail">
@@ -101,7 +101,7 @@ const Contact = () => {
               variants={fadeUp}
               custom={4}
             >
-              <div className="social mt-md-4 d-flex flex-column align-items-center gap-3 w-100">
+              <div className="social mt-md-0 mt-4 d-flex flex-column align-items-center gap-3 w-100">
                 <h3 className="size18 mb-3 text-md-end">Social Media:</h3>
                 <div className="social-links d-grid gap-3 justify-content-center">
                   {socialLinks.map((link, index) => (

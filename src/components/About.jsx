@@ -20,11 +20,11 @@ const About = () => {
           <img src={about} alt="Spidey Developer" className="about-image " />
         </div> */}
         <div className="content p-3 text-center">
-          <h2 className={`outline-text name ${hover ? "hovered" : ""}`}
+          <h1 className={`outline-text name ${hover ? "hovered" : ""}`}
             onMouseEnter={isHovered}
             onMouseLeave={isHovered}>
             about
-          </h2>
+          </h1>
           <p className="mb-3">
             Hi, I'm a Frontend Developer who weaves code just like Spidey swings his web.
           </p>

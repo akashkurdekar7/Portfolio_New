@@ -30,26 +30,33 @@ const Cursor = () => {
 
     const handleMouseOver = (e) => {
       console.log(e.target);
-      if (innerCursorRef.current && e.target.closest(growSelector)) {
-        innerCursorRef.current.classList.add("grow");
+      if (outerCursorRef.current && e.target.closest(growSelector)) {
+        outerCursorRef.current.classList.add("grow");
+        innerCursorRef.current.classList.add("color");
       }
     };
 
     const handleMouseOut = (e) => {
-      if (innerCursorRef.current && e.target.closest(growSelector)) {
-        innerCursorRef.current.classList.remove("grow");
+      if (outerCursorRef.current && e.target.closest(growSelector)) {
+        outerCursorRef.current.classList.remove("grow");
+        innerCursorRef.current.classList.remove("color");
+
       }
     };
 
     const handleMouseDown = () => {
-      if (innerCursorRef.current) {
-        innerCursorRef.current.classList.add("grow");
+      if (outerCursorRef.current) {
+        outerCursorRef.current.classList.add("grow");
+        innerCursorRef.current.classList.add("color");
+
       }
     };
   
     const handleMouseUp = () => {
-      if (innerCursorRef.current) {
-        innerCursorRef.current.classList.remove("grow");
+      if (outerCursorRef.current) {
+        outerCursorRef.current.classList.remove("grow");
+        innerCursorRef.current.classList.remove("color");
+
       }
     };
     document.addEventListener("mousemove", moveCursor);
