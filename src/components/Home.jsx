@@ -61,8 +61,8 @@ const Home = () => {
         </motion.div>
       </div>
 
-      <span className={`letter1 ${hover ? "hovered" : ""}`}>A</span>
-      <span className={`letter2 ${hover ? "hovered" : ""}`}>K</span>
+      {/* <span className={`letter1 ${hover ? "hovered" : ""}`}>A</span>
+      <span className={`letter2 ${hover ? "hovered" : ""}`}>K</span> */}
 
 
       <footer className="position-absolute bottom-0 w-100">
