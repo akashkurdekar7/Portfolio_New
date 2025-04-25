@@ -1,44 +1,45 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import ProjectData from "./ProjectData";
+import projectData from "./ProjectData";
+import "../styles.css"
+
+function slugify(text) {
+  return text.toLowerCase().replace(/\s+/g, "-");
+}
 
 const Projects = () => {
   const [hoveredIdx, setHoveredIdx] = useState(0);
   const [imgFade, setImgFade] = useState(false);
   const navigate = useNavigate();
 
-
   useEffect(() => {
     setImgFade(true);
-    const timeout = setTimeout(() => setImgFade(false), 200); 
+    const timeout = setTimeout(() => setImgFade(false), 200);
     return () => clearTimeout(timeout);
   }, [hoveredIdx]);
-
 
   return (
     <section className="projects">
       <div className="container-fluid h-100">
         <div className="content flex-md-row flex-column">
-          {/* Left: Image */}
           <div className="project-img-col d-flex justify-content-center align-items-center" style={{ flex: 1 }}>
             <img
-              src={ProjectData[hoveredIdx].img}
-              alt={ProjectData[hoveredIdx].title}
+              src={projectData[hoveredIdx].img}
+              alt={projectData[hoveredIdx].title}
               className={`h-100 cursor-pointer project-img${imgFade ? " fade-out" : ""}`}
-              onClick={() => navigate(`/projects/${slugify(ProjectData[hoveredIdx].title)}`)}
+              onClick={() => navigate(`/projects/${slugify(projectData[hoveredIdx].title)}`)}
             />
           </div>
 
-          {/* Right: List */}
           <div className="project-list-col ms-md-3 h-100 w-100" style={{ flex: .6 }}>
-            <div className="d-flex align-items-center justify-content-between">
+            <div className="d-flex align-items-center justify-content-between mt-3 mt-md-0">
               <h1 className="size32 fw-bold">Projects</h1>
-              <span className="size55 number">{ProjectData.length}</span>
+              <span className="size55 number">{projectData.length}</span>
             </div>
 
             <ul className="project-list mt-3 p-0">
-              {ProjectData.map((p, idx) => (
+              {projectData.map((p, idx) => (
                 <li
                   key={idx}
                   onMouseEnter={() => setHoveredIdx(idx)}
@@ -53,7 +54,6 @@ const Projects = () => {
                     <span
                       className={`project-title-inner${hoveredIdx === idx ? " hovered" : ""}`}
                     >
-                      {/* Show arrow only when hovered */}
                       {hoveredIdx === idx && (
                         <FiArrowRight className="me-2 project-arrow" />
                       )}
@@ -66,15 +66,9 @@ const Projects = () => {
           </div>
         </div>
       </div>
-      <style>{`
-        
-      `}</style>
+
     </section>
   );
 };
 
 export default Projects;
-
-function slugify(text) {
-  return text.toLowerCase().replace(/\s+/g, "-");
-}

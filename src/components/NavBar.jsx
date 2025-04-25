@@ -9,10 +9,6 @@ import { FaArrowUpRightDots, FaArrowUpRightFromSquare } from "react-icons/fa6";
 const NavBar = () => {
   const [active, setActive] = useState(false);
   const [theme, setTheme] = useState("darkmode");
-  const [languageIndex, setLanguageIndex] = useState(0);
-  const languages = ["hello", "ನಮಸ್ಕಾರ", "नमस्ते", "హలో", "ഹലോ0", "bonjour"];
-  const [blur, setBlur] = useState(0);
-  const [scale, setScale] = useState(1);
 
   const navIcon = () => {
     setActive((prev) => !prev);
@@ -23,30 +19,12 @@ const NavBar = () => {
     setTheme(nextTheme);
   };
 
-  const Greetings = () => {
-    setLanguageIndex((prevIndex) => (prevIndex + 1) % languages.length);
-  };
 
   useEffect(() => {
     const root = document.documentElement;
     root.classList.remove("darkmode", "lightmode");
     root.classList.add(theme);
   }, [theme]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setBlur(5);
-      setScale(1.2);
-
-      setTimeout(() => {
-        setBlur(0);
-        setScale(1);
-        Greetings();
-      }, 500);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   const renderIcon = () => {
     return theme === "darkmode" ? <FaMoon /> : <FaSun />;
@@ -60,17 +38,7 @@ const NavBar = () => {
         </Link>
 
         <div className="d-flex justify-content-center align-items-center gap-5">
-          <h3
-            className="language-switch fw-bold mb-0"
-            role="button"
-            style={{
-              cursor: "pointer",
-              transition: "transform 0.5s ease-in-out, filter 0.5s ease-in-out",
-              transform: `scale(${scale})`,
-              filter: `blur(${blur}px)`,
-            }}>
-            {languages[languageIndex]}
-          </h3>
+          
 
           <div
             className="mode fs-4 d-flex"
