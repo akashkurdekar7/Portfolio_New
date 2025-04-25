@@ -46,9 +46,9 @@ const projectData = [
       "Optimizing animation performance",
       "Ensuring cross-browser compatibility"
     ],
-    demoLink: "https://parallax-website-wheat.vercel.app/",
-    githubLink: "https://github.com/yourusername/parallax-site",
-    date: "2023-02"
+    demoLink: "https://parallax-website-ecru.vercel.app/",
+    githubLink: "https://github.com/akashkurdekar7/parallax_website",
+    date: "2025-02"
   },
   {
     title: "Smart Road Safety System",
@@ -67,7 +67,7 @@ const projectData = [
       "Real-time map updates"
     ],
     githubLink: "https://github.com/yourusername/road-safety-system",
-    date: "2022-12"
+    date: "2024-01"
   },
   {
     title: "Knight-Bite Clone",
@@ -82,7 +82,7 @@ const projectData = [
       "Interactive cart"
     ],
     githubLink: "https://github.com/yourusername/knight-bite-clone",
-    date: "2022-10"
+    date: "2024-10"
   },
   {
     title: "Vehicle Service Management System",
@@ -112,7 +112,7 @@ const projectData = [
       "Image gallery"
     ],
     githubLink: "https://github.com/yourusername/royal-brothers-clone",
-    date: "2022-06"
+    date: "2025-10"
   },
   {
     title: "Amma’s Pastry Clone",
@@ -127,7 +127,7 @@ const projectData = [
       "Custom fonts and colors"
     ],
     githubLink: "https://github.com/yourusername/ammas-pastry-clone",
-    date: "2022-04"
+    date: "2025-10"
   },
   {
     title: "Kraftopia Website",
@@ -142,7 +142,7 @@ const projectData = [
       "Gallery and contact form"
     ],
     githubLink: "https://github.com/yourusername/kraftopia-website",
-    date: "2022-03"
+    date: "2023-08"
   },
   {
     title: "Contest Voting Platform",
@@ -157,7 +157,7 @@ const projectData = [
       "Live voting and results"
     ],
     githubLink: "https://github.com/yourusername/contest-voting-platform",
-    date: "2022-01"
+    date: "2023-06"
   },
   {
     title: "Currency Converter",
@@ -172,7 +172,7 @@ const projectData = [
       "Error handling for API failures"
     ],
     githubLink: "https://github.com/yourusername/currency-converter",
-    date: "2021-11"
+    date: "2024-11"
   }
 ];
 
