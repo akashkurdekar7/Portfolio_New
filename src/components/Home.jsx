@@ -48,9 +48,12 @@ const Home = () => {
       id="home"
       className="home-section d-flex align-items-center justify-content-center text-center position-relative">
       <div className="container">
-        <h3
+        <motion.h3
           className="language-switch fw-bold mb-0"
           role="button"
+          initial={{opacity: 0, y: -30}}
+          animate={{opacity: 1, y: 0}}
+          transition={{duration: 0.4}}
           style={{
             cursor: "pointer",
             transition: "transform 0.5s ease-in-out, filter 0.5s ease-in-out",
@@ -58,7 +61,7 @@ const Home = () => {
             filter: `blur(${blur}px)`,
           }}>
           {languages[languageIndex]}
-        </h3>
+        </motion.h3>
         <motion.h1
           className="display-4 fw-bold"
           initial={{opacity: 0, y: -20}}

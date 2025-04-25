@@ -48,26 +48,26 @@ const ProjectCaseStudy = () => {
                   <p className="date size16">{project.date}</p>
                   <div className="d-flex justify-content-center align-content-center gap-2">
                     {project.githubLink && (
-                      <Button
-                        className="gitlink"
+                      <a
+                        className="button gitlink"
                         href={project.githubLink}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <FiGithub />
                         git link
-                      </Button>
+                      </a>
                     )}
                     {project.demoLink && (
-                      <Button
-                        className="demo"
+                      <a
+                        className="button demo"
                         href={project.demoLink}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <FiExternalLink />
                         Demo
-                      </Button>
+                      </a>
                     )}
                   </div>
                 </div>

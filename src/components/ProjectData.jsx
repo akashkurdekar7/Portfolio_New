@@ -27,7 +27,7 @@ const projectData = [
       "Integrating real-time wildlife data APIs",
       "Designing an intuitive and accessible UI for diverse audiences"
     ],
-    githubLink: "https://github.com/akashkurdekar7",
+    githubLink: "https://github.com/akashkurdekar7/wildlife-template",
     date: "2023-05"
   },
   {
@@ -66,7 +66,6 @@ const projectData = [
       "Reliable sensor data transmission",
       "Real-time map updates"
     ],
-    githubLink: "https://github.com/yourusername/road-safety-system",
     date: "2024-01"
   },
   {
@@ -81,7 +80,7 @@ const projectData = [
       "Animated menu transitions",
       "Interactive cart"
     ],
-    githubLink: "https://github.com/yourusername/knight-bite-clone",
+    githubLink: "https://github.com/akashkurdekar7/knight-bite",
     date: "2024-10"
   },
   {
@@ -96,7 +95,7 @@ const projectData = [
       "Automated service reminders",
       "Admin dashboard"
     ],
-    githubLink: "https://github.com/yourusername/vehicle-service-management",
+    githubLink: "https://github.com/akashkurdekar7/vehicle_service",
     date: "2022-08"
   },
   {
@@ -111,7 +110,7 @@ const projectData = [
       "Booking form UI",
       "Image gallery"
     ],
-    githubLink: "https://github.com/yourusername/royal-brothers-clone",
+    githubLink: "https://github.com/akashkurdekar7/royal-brothers",
     date: "2025-10"
   },
   {
@@ -126,7 +125,7 @@ const projectData = [
       "Responsive design",
       "Custom fonts and colors"
     ],
-    githubLink: "https://github.com/yourusername/ammas-pastry-clone",
+    githubLink: "https://github.com/akashkurdekar7/ammas-patery",
     date: "2025-10"
   },
   {
@@ -141,11 +140,11 @@ const projectData = [
       "Animated hero section",
       "Gallery and contact form"
     ],
-    githubLink: "https://github.com/yourusername/kraftopia-website",
+    githubLink: "https://github.com/akashkurdekar7/Ecommerce-app",
     date: "2023-08"
   },
   {
-    title: "Contest Voting Platform",
+    title: "Contest Gaming Platform",
     description: "A platform for hosting and voting on creative contests, integrated with Firebase.",
     img: contestImg,
     overview: "A web app for hosting contests, allowing users to submit entries and vote, with real-time updates via Firebase.",
@@ -156,7 +155,7 @@ const projectData = [
       "Entry submission",
       "Live voting and results"
     ],
-    githubLink: "https://github.com/yourusername/contest-voting-platform",
+    githubLink: "https://github.com/akashkurdekar7/contest_game",
     date: "2023-06"
   },
   {
@@ -171,7 +170,7 @@ const projectData = [
       "Clean, modern UI",
       "Error handling for API failures"
     ],
-    githubLink: "https://github.com/yourusername/currency-converter",
+    githubLink: "https://github.com/akashkurdekar7/",
     date: "2024-11"
   }
 ];

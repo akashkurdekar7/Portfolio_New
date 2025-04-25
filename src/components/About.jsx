@@ -20,7 +20,7 @@ const letterVariants = {
     y: 0,
     transition: { delay: 0.4 + i * 0.08, type: "spring", stiffness: 120 }
   }),
-  hover: { scale: 1.18, color: "var(--accent, #6c63ff)" }
+  hover: { scale: 1.18, color: "var(--accent)" }
 };
 
 const About = () => {

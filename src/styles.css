@@ -250,6 +250,7 @@ img {
   touch-action: manipulation;
   text-transform: capitalize;
   font-family: var(--font-mono);
+  border-color: var(--text);
 }
 
 .button:hover {
@@ -824,7 +825,7 @@ nav {
   .role {
     display: inline-block;
     font-weight: 700;
-    color: var(--text, #6c63ff);
+    color: var(--text);
     border-radius: 6px;
     padding: 0.06em 0.5em;
     font-size: 1.12em;
@@ -1117,7 +1118,7 @@ nav {
 
   .project-list-item {
     transition: background 0.3s, color 0.3s;
-    border-bottom: 1px solid var(--text, #ddd);
+    border-bottom: 1px solid var(--text);
     position: relative;
     overflow: hidden;
     background: transparent;
