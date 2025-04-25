@@ -1021,6 +1021,7 @@ nav {
 /* projects css */
 .projects {
   h1 {
+    margin: 0;
     font-family: var(--font-pilo);
   }
 
@@ -1037,7 +1038,7 @@ nav {
   .content {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 1%;
     transform: translateX(-50%);
     width: 100%;
     height: 70%;
@@ -1069,6 +1070,7 @@ nav {
   .project-img {
     width: 100%;
     height: 100%;
+    border-radius: 0rem 3rem 3rem 0;
     transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 1;
 
