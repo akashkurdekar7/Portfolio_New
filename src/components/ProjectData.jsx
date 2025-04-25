@@ -27,8 +27,7 @@ const projectData = [
       "Integrating real-time wildlife data APIs",
       "Designing an intuitive and accessible UI for diverse audiences"
     ],
-    demoLink: "https://wildlife-conservation-demo.com",
-    githubLink: "https://github.com/yourusername/wildlife-conservation",
+    githubLink: "https://github.com/akashkurdekar7",
     date: "2023-05"
   },
   {
@@ -47,7 +46,7 @@ const projectData = [
       "Optimizing animation performance",
       "Ensuring cross-browser compatibility"
     ],
-    demoLink: "https://parallax-demo.com",
+    demoLink: "https://parallax-website-wheat.vercel.app/",
     githubLink: "https://github.com/yourusername/parallax-site",
     date: "2023-02"
   },

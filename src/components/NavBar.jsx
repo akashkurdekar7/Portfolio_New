@@ -115,7 +115,7 @@ const NavBar = () => {
               </li>
               <li onClick={() => setActive(!active)} className="gap-4 mt-md-4 mt-2 nav-links">
                 <a
-                  href="https://www.instagram.com/yourusername"
+                  href="https://www.instagram.com/unlikeakash_"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
@@ -126,7 +126,7 @@ const NavBar = () => {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/akashkurdekar/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
